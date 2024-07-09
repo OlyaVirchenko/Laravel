@@ -19,4 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/groups', [GroupController::class, 'index']);
+Route::resource('groups', GroupController::class);
+Route::resource('groups.students', StudentController::class, ['except' => ['index']]);
