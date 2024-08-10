@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['group_id', 'surname', 'name'];
-
     public function group()
     {
-        return $this->belongsTo(Group::class);
+        // Доработка - не забывать про код-стайл и ставить пробелы для читаемости кода
+        return $this->belongsTo(Student::class, 'group_id', 'id');
+        //return $this->belongsTo(Groups::class);
     }
 }

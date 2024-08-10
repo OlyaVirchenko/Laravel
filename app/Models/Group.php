@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'start_from', 'is_active'];
+
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Student::class, 'group_id', 'id'); // Метод определяет отношения объекта Группы с объектами Студенты
+        //return $this->hasMany(Students::class);
     }
 }

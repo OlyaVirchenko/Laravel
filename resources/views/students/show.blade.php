@@ -1,14 +1,19 @@
-<link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css" rel="stylesheet">
-
-<div class="d-flex flex-column align-items-center">
-    <h3 class="text-center mt-4">Информация о студенте</h3>
-
-    <p class="mt-4">Фамилия: {{ $student->surname }}</p>
-    <p>Имя: {{ $student->name }}</p>
-    <p>Группа: {{ $student->group->title }}</p>
-
-
-<footer class="footer">
-    <a class="btn btn-outline-success mt-4" href="{{ route('groups.show', $group->id) }}">Вернуться к группе</a>
-</footer>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student details</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>          
+    {{-- Данные о студенте --}}    
+    <div>
+        <p>Фамилия: {{$student_data->surname}}</p>
+        <p>Имя: {{$student_data->name}}</p>
+        <p><small>Дата создания:{{$student_data->created_at ?? '-'}}</small></p>        
+        <p><small>Дата обновления:{{$student_data->update_at ?? '-'}}</small></p>        
+    </div>       
+</body>
+</html>
